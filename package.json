@@ -1,0 +1,45 @@
+{
+  "name": "device-provisioning-exercise",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <27"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"tsx watch src/server.ts\" \"vite --host 127.0.0.1\"",
+    "start": "tsx src/server.ts",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke": "tsx scripts/smoke.ts",
+    "fault": "tsx scripts/fault.ts",
+    "delay": "tsx scripts/delay.ts",
+    "network": "tsx scripts/network.ts",
+    "gateway": "tsx scripts/gateway.ts",
+    "receipt": "tsx scripts/receipt.ts",
+    "redeliver": "tsx scripts/redeliver.ts",
+    "reset": "tsx scripts/reset.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/supertest": "^6.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.2.0",
+    "supertest": "^7.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0",
+    "vitest": "^5.1.0"
+  }
+}
